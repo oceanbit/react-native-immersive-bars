@@ -62,7 +62,7 @@ public class ImmersiveBars {
                 boolean shouldTranslucizeNavBar = Build.VERSION.SDK_INT <= Build.VERSION_CODES.O;
 
                 if (shouldTranslucizeStatusBar) {
-                    window.setStatusBarColor(isDarkMode ? translucentLightColor : translucentDarkColor);
+                    window.setStatusBarColor(isDarkMode ? translucentDarkColor : translucentLightColor);
                 } else {
                     window.setStatusBarColor(Color.TRANSPARENT);
                     if (!isDarkMode) {
@@ -71,7 +71,7 @@ public class ImmersiveBars {
                 }
 
                 if (shouldTranslucizeNavBar) {
-                    window.setNavigationBarColor(isDarkMode ? translucentLightColor : translucentDarkColor);
+                    window.setNavigationBarColor(isDarkMode ? translucentDarkColor: translucentLightColor);
                 } else {
                     window.setNavigationBarColor(Color.TRANSPARENT);
                     if (!isDarkMode) {
