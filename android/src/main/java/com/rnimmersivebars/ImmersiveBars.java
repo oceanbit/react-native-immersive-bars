@@ -1,9 +1,10 @@
-package org.rnimmersivebars;
+package com.rnimmersivebars;
 
 import android.os.Build;
 import android.graphics.Color;
 import android.view.View;
 import android.view.Window;
+import android.app.Activity;
 
 public class ImmersiveBars {
     /**
@@ -18,21 +19,17 @@ public class ImmersiveBars {
      * For usage in the onCreate method
      */
     public static void changeBarColors(final Activity activity, final Boolean isDarkMode) {
-        changeBarColors(activity, isDarkMode, "", "", (boolean worked) -> {});
-    }
-
-    public static void changeBarColors(final Activity activity, final Boolean isDarkMode, final String translucentLightStr, final String translucentDarkStr) {
-        changeBarColors(activity, isDarkMode, translucentDarkStr, translucentDarkStr, (boolean worked) -> {});
+        changeBarColors(activity, isDarkMode, "", "");
     }
 
     /**
      * For usage in the React Module
      */
-    public static void changeBarColors(final Activity activity, final Boolean isDarkMode, final String translucentLightStr, final String translucentDarkStr, ChangeColorsCallback cb) {
+    public static void changeBarColors(final Activity activity, final Boolean isDarkMode, final String translucentLightStr, final String translucentDarkStr) {
         if (activity == null) {
-            cb.finished(false);
+            return;
         }
-        final Window window = getCurrentActivity().getWindow();
+        final Window window = activity.getWindow();
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -83,8 +80,6 @@ public class ImmersiveBars {
                 }
 
                 window.getDecorView().setSystemUiVisibility(flags);
-
-                cb.finished(true);
             }
         });
     }

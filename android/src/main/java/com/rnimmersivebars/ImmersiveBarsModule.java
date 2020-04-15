@@ -1,4 +1,4 @@
-package org.rnimmersivebars;
+package com.rnimmersivebars;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -23,47 +23,21 @@ public class ImmersiveBarsModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void changeBarColors(final Boolean isDarkMode, Promise promise) {
-        try {
-            ImmersiveBars.changeBarColors(
-                    getCurrentActivity(),
-                    isDarkMode,
-                    "",
-                    "",
-                    worked -> {
-                        if (worked) {
-                            promise.resolve(worked)
-                        } else {
-                            promise.reject(ERROR_NO_ACTIVITY, new Throwable(ERROR_NO_ACTIVITY_MESSAGE));
-                        }
-                    }
-            );
-        } catch (IllegalViewOperationException e) {
-            WritableMap map = Arguments.createMap();
-            map.putBoolean("success", false);
-            promise.reject("error", e);
-        }
+        ImmersiveBars.changeBarColors(
+                getCurrentActivity(),
+                isDarkMode,
+                "",
+                ""
+        );
     }
 
     @ReactMethod
-    public void changeBarColors(final Boolean isDarkMode, final String translucentLightStr, final String translucentDarkStr, Promise promise) {
-        try {
-            ImmersiveBars.changeBarColors(
-                    getCurrentActivity(),
-                    isDarkMode,
-                    translucentLightStr,
-                    translucentDarkStr,
-                    worked -> {
-                        if (worked) {
-                            promise.resolve(worked)
-                        } else {
-                            promise.reject(ERROR_NO_ACTIVITY, new Throwable(ERROR_NO_ACTIVITY_MESSAGE));
-                        }
-                    }
-            );
-        } catch (IllegalViewOperationException e) {
-            WritableMap map = Arguments.createMap();
-            map.putBoolean("success", false);
-            promise.reject("error", e);
-        }
+    public void changeBarColors(final Boolean isDarkMode, final String translucentLightStr, final String translucentDarkStr) {
+        ImmersiveBars.changeBarColors(
+                getCurrentActivity(),
+                isDarkMode,
+                translucentLightStr,
+                translucentDarkStr
+        );
     }
 }
