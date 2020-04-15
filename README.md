@@ -7,11 +7,11 @@
 
 </div>
 
-<div style="display: flex; justify-content: center">
+<div align="center">
 
-<img height="300" alt="A preview in Android 10" src="./promo/android_10.gif"/>
+<img height="600" alt="A preview in Android 10" src="./promo/android_10.gif"/>
 
-<img height="300" alt="A preview in Android M" src="./promo/android_m.gif"/>
+<img height="600" alt="A preview in Android M" src="./promo/android_m.gif"/>
 
 </div>
 
