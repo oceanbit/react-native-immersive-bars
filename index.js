@@ -1,0 +1,3 @@
+const changeBarColors = () => {};
+
+export { changeBarColors };

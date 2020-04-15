@@ -1,0 +1,31 @@
+{
+  "name": "react-native-immersive-bars",
+  "version": "0.1.0",
+  "description": "React Native component to change bottom bar/navigation bar to be transparent on Android",
+  "main": "index.android.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crutchcorn/react-native-immersive-bars.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-component",
+    "react-native-immersive-bars",
+    "immersive-mode",
+    "transparent-navbar",
+    "transparent-statusbar",
+    "android"
+  ],
+  "author": "crutchcorn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crutchcorn/react-native-immersive-bars/issues"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.57.0"
+  },
+  "homepage": "https://github.com/crutchcorn/react-native-immersive-bars#readme"
+}
