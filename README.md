@@ -1,5 +1,5 @@
 <h1 align="center">
-  React Native Button Toggle Group
+  React Native Immersive Bars
 </h1>
 <div align="center">
 
