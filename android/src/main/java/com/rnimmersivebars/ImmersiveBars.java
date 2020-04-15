@@ -5,28 +5,35 @@ import android.graphics.Color;
 import android.view.View;
 import android.view.Window;
 
-import static com.facebook.react.bridge.UiThreadUtil.runOnUiThread;
-
 public class ImmersiveBars {
+    /**
+     * Allowing usage of lambda for Promise replacement within the file
+     */
     interface ChangeColorsCallback
     {
         void finished(boolean worked);
     }
 
-    public static void changeBarColors(final Boolean isDarkMode) {
-        changeBarColors(isDarkMode, "", "", (boolean worked) -> {});
+    /**
+     * For usage in the onCreate method
+     */
+    public static void changeBarColors(final Activity activity, final Boolean isDarkMode) {
+        changeBarColors(activity, isDarkMode, "", "", (boolean worked) -> {});
     }
 
-    public static void changeBarColors(final Boolean isDarkMode, final String translucentLightStr, final String translucentDarkStr) {
-        changeBarColors(isDarkMode, translucentDarkStr, translucentDarkStr, (boolean worked) -> {});
+    public static void changeBarColors(final Activity activity, final Boolean isDarkMode, final String translucentLightStr, final String translucentDarkStr) {
+        changeBarColors(activity, isDarkMode, translucentDarkStr, translucentDarkStr, (boolean worked) -> {});
     }
 
-    public static void changeBarColors(final Boolean isDarkMode, final String translucentLightStr, final String translucentDarkStr, ChangeColorsCallback cb) {
-        if (getCurrentActivity() != null) {
+    /**
+     * For usage in the React Module
+     */
+    public static void changeBarColors(final Activity activity, final Boolean isDarkMode, final String translucentLightStr, final String translucentDarkStr, ChangeColorsCallback cb) {
+        if (activity == null) {
             cb.finished(false);
         }
         final Window window = getCurrentActivity().getWindow();
-        runOnUiThread(new Runnable() {
+        activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 /**

@@ -25,6 +25,7 @@ public class ImmersiveBarsModule extends ReactContextBaseJavaModule {
     public void changeBarColors(final Boolean isDarkMode, Promise promise) {
         try {
             ImmersiveBars.changeBarColors(
+                    getCurrentActivity(),
                     isDarkMode,
                     "",
                     "",
@@ -47,6 +48,7 @@ public class ImmersiveBarsModule extends ReactContextBaseJavaModule {
     public void changeBarColors(final Boolean isDarkMode, final String translucentLightStr, final String translucentDarkStr, Promise promise) {
         try {
             ImmersiveBars.changeBarColors(
+                    getCurrentActivity(),
                     isDarkMode,
                     translucentLightStr,
                     translucentDarkStr,
