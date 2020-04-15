@@ -41,8 +41,6 @@ yarn add react-native-immersive-bars
 
 ### Usage in JavaScript
 
-![A preview of the component in use](./preview.gif)
-
 ```jsx
 import {changeBarColors} from 'react-native-immersive-bars';
 
