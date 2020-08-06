@@ -57,26 +57,26 @@ public class ImmersiveBars {
                 int flags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
 
                 // M was the first version that supported light mode status bar
-                boolean shouldTranslucizeStatusBar = Build.VERSION.SDK_INT <= Build.VERSION_CODES.M;
+                boolean shouldUseTransparentStatusBar = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
                 // O was the first version that supported light mode nav bar
-                boolean shouldTranslucizeNavBar = Build.VERSION.SDK_INT <= Build.VERSION_CODES.O;
+                boolean shouldUseTransparentNavBar = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
 
-                if (shouldTranslucizeStatusBar) {
-                    window.setStatusBarColor(isDarkMode ? translucentDarkColor : translucentLightColor);
-                } else {
+                if (shouldUseTransparentStatusBar) {
                     window.setStatusBarColor(Color.TRANSPARENT);
                     if (!isDarkMode) {
                         flags |= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
                     }
+                } else {
+                    window.setStatusBarColor(isDarkMode ? translucentDarkColor : translucentLightColor);
                 }
 
-                if (shouldTranslucizeNavBar) {
-                    window.setNavigationBarColor(isDarkMode ? translucentDarkColor: translucentLightColor);
-                } else {
+                if (shouldUseTransparentNavBar) {
                     window.setNavigationBarColor(Color.TRANSPARENT);
                     if (!isDarkMode) {
                         flags |= View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
                     }
+                } else {
+                    window.setNavigationBarColor(isDarkMode ? translucentDarkColor: translucentLightColor);
                 }
 
                 window.getDecorView().setSystemUiVisibility(flags);

@@ -22,6 +22,8 @@ However, [doing so previously was difficult to do and required some customizatio
 
 Well, this package enables you to easily do so across various Android APIs levels. It also mocks out usage with iOS and other platforms, so you're able to use it in cross-platform apps.
 
+> ⚠ This package only supports Android 5.0 and higher ⚠
+>
 > This package is meant to be used alongside [the `react-native-safe-area-context` package](https://github.com/th3rdwave/react-native-safe-area-context) in order
 > to provide proper padding and margins in order to keep scrollviews and others from being stuck forever under the navbar.
 >
