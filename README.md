@@ -41,6 +41,20 @@ Or
 yarn add react-native-immersive-bars
 ```
 
+### Android
+
+If you're targeting API 29+ in your React Native app, you need to do one more step to enable the fully transparent bars. Add:
+
+```xml
+<item name="android:enforceNavigationBarContrast">false</item>
+```
+
+To:
+
+```
+android\app\src\main\res\values\styles.xml
+```
+
 ## Usage
 
 ### Usage in JavaScript
