@@ -1,6 +1,6 @@
 {
   "name": "react-native-immersive-bars",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React Native component to change bottom bar/navigation bar to be transparent on Android",
   "main": "index.js",
   "scripts": {
