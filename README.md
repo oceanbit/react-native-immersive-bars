@@ -1,6 +1,7 @@
 <h1 align="center">
   React Native Immersive Bars
 </h1>
+
 <div align="center">
 
 [![Our npm path](https://badgen.net/npm/v/react-native-immersive-bars)](https://www.npmjs.com/package/react-native-immersive-bars/)

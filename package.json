@@ -1,8 +1,9 @@
 {
   "name": "react-native-immersive-bars",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React Native component to change bottom bar/navigation bar to be transparent on Android",
-  "main": "index.js",
+  "mainNote": "Do not add .js extension. It breaks the ability for metrto to detect platforms",
+  "main": "index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
